@@ -7,7 +7,6 @@ const App = () =>{
 		<div>
 			<h1>Robot Email Group</h1>
 			<Search/>
-			<CardList />
 		</div>
 		);
 }

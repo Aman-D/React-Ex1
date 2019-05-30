@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import CardList from '../Components/CardList.js';
+import './Search.css';
 
 
 class Search extends Component{
@@ -8,13 +9,21 @@ class Search extends Component{
 		this.state = {
 			keyword:''
 		}
+		
 	}
-	Searching(e){
-		console.log(e.target.value);
+	Searching = (event)=>{
+		this.setState({
+			keyword : event.target.value
+		});
 	}
+
+
 	render(){
 		return(
-		<input type="search" placeholder="Search" onClick="this.Searching()"/>);
-	}
+		<div>	
+		<input type="search" placeholder="Search" onChange={this.Searching}/>
+		<CardList searchWord={this.state.keyword}/>
+		</div>
+	);}
 }
 export default Search;
